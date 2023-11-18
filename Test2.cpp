@@ -51,7 +51,7 @@ void solve()
 }
 signed main()
 {
-    // file();
-    // faster();
+    file();
+    faster();
     solve();
 }
