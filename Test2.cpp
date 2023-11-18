@@ -20,24 +20,21 @@ const ll LINF= 1e18 + 5;
 const int ING = 1e9 + 5;
 const int MOD = 1e9 + 7;
 const int MAX = 1e6 + 5;
-int n, a[100];// lưu cấu hình
-bool check; // kiểm tra cấu hình cuối
+int n, a[100];
+bool check;
 void ktao()
 {
     FOR(i, 1, n) a[i] = 0;
-    // khởi tạo cấu hình ban đầu có n phần tử bằng 0
 }
 void sinh()
 {
-    // Bắt đầu từ bit cuối cùng, và tìm bit 0 đầu tiên
     int i = n;
-    // đi tìm bit đầu tiên = 0 tính từ bên phải
-    while(i >= 1 && a[i] == 1) // đảm bảo việc duyệt từ bit 1 đến bit n
+    while(i >= 1 && a[i] == 1)
     {
-        a[i] = 0; // gán giá trị bằng 0
-        i--; // dịch sang trái
+        a[i] = 0;
+        i--;
     }
-    if(i == 0) check = 0; // cau hinh cuoi cung
+    if(i == 0) check = 0;
     else a[i] = 1;
 }
 void solve()
@@ -47,7 +44,7 @@ void solve()
     ktao();
     while(check)
     {
-        FOR(i, 1, n) cout << a[i]; // in ra cấu hình hiện tại
+        FOR(i, 1, n) cout << a[i];
         cout << endl;
         sinh();
     }
